@@ -1,0 +1,18 @@
+
+<% if current_user %>
+  <div>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
+  </div>
+  <h3>Already a member?</h3>
+  <div>
+    <%= link_to "Edit account", edit_user_registration_path, align: "right"%>
+  </div>
+<% else %>
+  <div>
+    <%= link_to "New Account", new_user_registration_path, align: "left"%>
+  </div>
+  <h3>Already a member?</h3>
+  <div>
+    <%= link_to "Sign in", new_user_session_path, align: "right"%>
+  </div>
+<% end %>
